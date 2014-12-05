@@ -1,7 +1,7 @@
 #This file has been created to try out a command line parser in Python.
 
 def main():
-  if len(sys.argv)!=3:
+  if len(sys.argv)!=4:
     print 'Incorrect usage: Use like "./sort.py {-o|--output|-r|--reverse} inputFilename {outputFilename}"'
     sys.exit(1)
   
