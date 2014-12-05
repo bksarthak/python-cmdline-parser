@@ -2,7 +2,7 @@
 
 def main():
   if len(sys.argv)!=4:
-    print 'Incorrect usage: Use like "./sort.py {-o|--output|-r|--reverse} inputFilename {outputFilename}"'
+    print 'Incorrect usage: Use like "./sort.py {-o|--output|-r|--reverse} inputFilename outputFilename"'
     sys.exit(1)
   
   flag = sys.argv[1]
@@ -10,7 +10,7 @@ def main():
   outputfile = sys.argv[3]
   
   if (flag=='-o' or flag=='--output'):
-    write_output(inputfile)
+    write_output(inputfile,outputfile)
   elif (flag=='-r' or flag=='--reverse'):
     print_reverse(inputfile,outputfile)
   else:
