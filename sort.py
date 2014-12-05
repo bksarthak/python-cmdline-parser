@@ -1,5 +1,15 @@
-#This file has been created to try out a command line parser in Python.
+#This file has been created to try out a command line sorter, which prints the output to another file using Python.
 
+def write_output(inputfile,outputfile):
+  openFile = open(inputfile,'r')
+  fileContent = openFile.read()
+  lines = fileContent.lower()
+  words = lines.split()
+  writeFile = open(outputfile,'w')
+  writeFile.write(words)
+  openFile.close()
+  writeFile.close()
+  
 def main():
   if len(sys.argv)!=4:
     print 'Incorrect usage: Use like "./sort.py {-o|--output|-r|--reverse} inputFilename outputFilename"'
