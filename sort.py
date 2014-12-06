@@ -10,6 +10,9 @@ def write_output(inputfile,outputfile):
   writeFile.write(sortedWords)
   openFile.close()
   writeFile.close()
+
+def print_reverse(inputfile):
+ 
   
 def main():
   if len(sys.argv)!=4:
@@ -23,7 +26,7 @@ def main():
   if (flag=='-o' or flag=='--output'):
     write_output(inputfile,outputfile)
   elif (flag=='-r' or flag=='--reverse'):
-    print_reverse(inputfile,outputfile)
+    print_reverse(inputfile)
   else:
     print('Error with option entered')
     sys.exit(1)
