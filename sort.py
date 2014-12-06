@@ -1,5 +1,5 @@
 #This file has been created to try out a command line sorter, which prints the output to another file using Python.
-
+import sys
 def write_output(inputfile,outputfile):
   openFile = open(inputfile,'r')
   fileContent = openFile.read()
@@ -27,5 +27,5 @@ def main():
     print('Error with option entered')
     sys.exit(1)
     
-if _name_ == '_main_':
+if __name__ == '__main__':
   main()
