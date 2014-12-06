@@ -5,8 +5,9 @@ def write_output(inputfile,outputfile):
   fileContent = openFile.read()
   lines = fileContent.lower()
   words = lines.split()
+  sortedWords = sorted(words)
   writeFile = open(outputfile,'w')
-  writeFile.write(words)
+  writeFile.write(sortedWords)
   openFile.close()
   writeFile.close()
   
