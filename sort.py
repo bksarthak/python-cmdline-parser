@@ -12,24 +12,25 @@ def write_output(inputfile,outputfile):
   writeFile.close()
 
 def print_reverse(inputfile):
- 
+  openFile = open(inputfile,'r')
+  fileContent = openFile.read()
+  lines= fileContent.lower()
+  words = lines.split()
+  sortedWords = sorted(words,reverse=True)
+  print sortedWords
   
 def main():
-  if len(sys.argv)!=4:
-    print 'Incorrect usage: Use like "./sort.py {-o|--output|-r|--reverse} inputFilename outputFilename"'
-    sys.exit(1)
-  
-  flag = sys.argv[1]
-  inputfile = sys.argv[2]
-  outputfile = sys.argv[3]
-  
-  if (flag=='-o' or flag=='--output'):
-    write_output(inputfile,outputfile)
-  elif (flag=='-r' or flag=='--reverse'):
-    print_reverse(inputfile)
-  else:
-    print('Error with option entered')
-    sys.exit(1)
-    
+  parser = argparse.ArgumentParser()
+	parser.add_argument ('-o','--output',dest='filename',action='store',metavar='OUTPUTFILE', help='print output to file')
+	parser.add_argument('-r','--reverse',dest='filename',action='store',metavar='INPUTFILE', help ='display reverse sorting')
+	args = parser.parse_args()
+	
+	if sys.argv[]:
+		write_output(sys.argv[-2],sys.argv[-1])
+	elif args.reverse:
+		print_reverse(sys.argv[-1])
+	else:
+	 print('something is wrong')
+	  
 if __name__ == '__main__':
   main()
