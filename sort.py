@@ -19,16 +19,16 @@ def print_reverse(inputfile):
   sortedWords = sorted(words,reverse=True)
   print sortedWords
   
-def main():
-  parser = argparse.ArgumentParser()
-	parser.add_argument ('-o','--output',dest='filename',action='store',metavar='OUTPUTFILE', help='print output to file')
-	parser.add_argument('-r','--reverse',dest='filename',action='store',metavar='INPUTFILE', help ='display reverse sorting')
+def main ():
+	parser = argparse.ArgumentParser()
+	parser.add_argument ('-o','--output',help='print output to file')
+	parser.add_argument('-r','--reverse', help ='display reverse sorting')
 	args = parser.parse_args()
 	
-	if sys.argv[]:
-		write_output(sys.argv[-2],sys.argv[-1])
-	elif args.reverse:
+	if args.reverse:
 		print_reverse(sys.argv[-1])
+	elif args.output:
+		write_output(sys.argv[-2],sys.argv[-1])
 	else:
 	 print('something is wrong')
 	  
