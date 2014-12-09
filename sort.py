@@ -21,7 +21,7 @@ def print_reverse(inputfile):
   
 def main ():
 	parser = argparse.ArgumentParser()
-	parser.add_argument ('-o','--output',help='print output to file')
+	parser.add_argument ('-o','--output',type=argparse.FileType('r'),nargs='*',help='print output to file')
 	parser.add_argument('-r','--reverse', help ='display reverse sorting')
 	args = parser.parse_args()
 	
